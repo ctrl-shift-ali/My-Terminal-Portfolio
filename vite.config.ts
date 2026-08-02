@@ -8,6 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base: '/Terminal-Portfolio/',
   plugins: [
     {
       name: "terminal-homepage-curl",
@@ -55,7 +56,6 @@ export default defineConfig({
     host: true,
   },
   build: {
-    // Server (server/index.js) serves this folder as static assets in production.
     outDir: "dist/public",
     emptyOutDir: true,
   },
