@@ -132,31 +132,31 @@ export default function Home() {
             {/* Portrait */}
             <AsciiArt
               content={meArt}
-              baseFontSize={7}
-              maxScale={1}
+              baseFontSize={8}
+              maxScale={2}
               className="mt-3 w-full max-w-[420px] self-start text-[#ffffff] sm:max-w-[460px] md:max-w-[500px] max-h-[56rem]"
             />
 
             {/* Title + bio + nav */}
-            <div className="flex min-w-0 flex-col gap-5">
+            <div className="flex min-w-0 flex-col gap-3">
               <div className="w-full min-w-0 text-[#d4ffda] bg-[#031204]/80 border border-[#70ff70]/20 rounded-[1.25rem] p-2 sm:p-3">
                 <div className="ascii-glow w-full overflow-hidden select-none">
                   <AsciiArt
                     content={isMobile ? mobileTitleArt : titleArt}
-                    baseFontSize={isMobile ? 8 : 12}
+                    baseFontSize={isMobile ? 8 : 14}
                     maxScale={1}
                     className="w-full max-w-full"
                   />
                 </div>
               </div>
 
-              <div className="max-w-xl space-y-2 text-[11px] leading-relaxed text-white/85 sm:text-[12px]">
+              <div className="max-w-xl space-y-2 text-[10px] leading-relaxed text-white/85 sm:text-[11px]">
                 {CONFIG.bio.map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
               </div>
 
-              <div className="mt-1 flex flex-wrap gap-x-6 gap-y-6 text-[12px] sm:text-[13px]">
+              <div className="mt-1 flex flex-wrap gap-x-6 gap-y-3 text-[12px] sm:text-[13px]">
                 {CONFIG.nav.map((item, i) =>
                   item.href ? (
                     <a

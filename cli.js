@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { spawn } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { getTerminalHomepage } from "./shared/terminal-output.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -56,14 +56,7 @@ function printHelp() {
 }
 
 function printTerminalOutput() {
-  const portraitArt = readFileSync(path.join(rootDir, "src", "assets", "terminal-ascii-me.txt"), "utf8").trimEnd();
-  const now = new Date();
-  const formatted = now.toDateString().replace(/^(\w+) (\w+) (\d+) (\d+)$/, (_m, wd, mo, d, y) => {
-    const day = d.padStart(2, " ");
-    return `${wd} ${mo} ${day} ${y}`;
-  });
-  const time = now.toTimeString().slice(0, 8);
-  console.log(portraitArt);
+  console.log(getTerminalHomepage());
 }
 
 function parsePort(args) {
