@@ -21,9 +21,17 @@ const CONFIG = {
   nav: [
     { label: "Portfolio", href: "https://ctrl-shift-ali.github.io/My-Portfolio/" },
     { label: "Github", href: "https://github.com/ctrl-shift-ali" },
-    { label: "Instagram", href: "https://www.instagram.com/aliii_abeer" },
+    { label: "Contacts",
+      OnClick: () => {
+        const user = "maliabeer1127";
+        const domain = "gmail.com";
+        window.location.href = `mailto:${user}@${domain}`;
+      }
+    },
   ],
 };
+// ----------------------------------------------------------------------------
+
 function useLastLogin() {
   return useMemo(() => {
     const now = new Date();
@@ -58,16 +66,6 @@ export default function Home() {
   useEffect(() => {
     containerRef.current?.focus();
   }, []);
-
-  const handleCopyCommand = async (commandToCopy: string) => {
-    const command = `curl ${CONFIG.host}`;
-    try {
-      await navigator.clipboard.writeText(commandToCopy);
-      toast.success("Command copied — paste it into your terminal");
-    } catch {
-      toast.error("Couldn't copy automatically — copy it manually instead");
-    }
-  };
 
   const openItem = (index: number) => {
     const item = CONFIG.nav[index];
@@ -124,17 +122,10 @@ export default function Home() {
               {CONFIG.user}@{CONFIG.machine}
             </span>
             <span className="text-white/60"> ~ % </span>
-            <button
-              type="button"
-              onClick={() => handleCopyCommand("curl -A \"curl\" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/src/assets/terminal-ascii-me.txt")}
-              title="Click to copy this command"
-              className="cursor-pointer bg-transparent p-0 font-mono text-inherit hover:text-white focus:outline-none focus-visible:underline"
-            >
-              <span>curl </span>
-              <span className="text-[#ffffffe0]">maliabeer.dev</span>
-              <span className="text-[#ffffff81]"> (click on this 'maliabeer.dev' and then paste the copied command in your cmd terminal using 'Shift + Insert')</span>
+            <span>
+              curl {CONFIG.host}
               <span className="cursor-blink ml-0.5 inline-block h-[1em] w-[0.5em] translate-y-0.5 bg-[#d4d4d4] align-middle" />
-            </button>
+            </span>
           </p>
 
           <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:items-start">
