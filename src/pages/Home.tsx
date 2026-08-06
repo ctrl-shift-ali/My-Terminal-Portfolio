@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-16 text-center">
             <span className="truncate text-[11px] text-white/70">
-              {CONFIG.user} — ssh.{CONFIG.host} — {CONFIG.cols}x{CONFIG.rows}
+              {CONFIG.user} — curl.{CONFIG.host} — {CONFIG.cols}x{CONFIG.rows}
             </span>
           </div>
         </div>
