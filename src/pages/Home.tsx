@@ -126,7 +126,7 @@ export default function Home() {
             <span className="text-white/60"> ~ % </span>
             <button
               type="button"
-              onClick={() => handleCopyCommand("curl -A \"curl\" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/src/assets/terminal-ascii-me.txt")}
+              onClick={() => handleCopyCommand("curl -A \"curl\" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/MAliAbeerKhan")}
               title="Click to copy this command"
               className="cursor-pointer bg-transparent p-0 font-mono text-inherit hover:text-white focus:outline-none focus-visible:underline"
             >
