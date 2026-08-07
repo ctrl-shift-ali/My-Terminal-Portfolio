@@ -126,16 +126,18 @@ export default function Home() {
             <span className="text-white/60"> ~ % </span>
             <button
               type="button"
-              onClick={() => handleCopyCommand("curl -A \"curl\" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/MAliAbeerKhan")}
+              onClick={() => handleCopyCommand("curl -A \"curl\" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/MAliAbeerKhan/")}
               title="Click to copy this command"
               className="cursor-pointer bg-transparent p-0 font-mono text-inherit hover:text-white focus:outline-none focus-visible:underline"
             >
               <span>curl </span>
               <span className="text-[#ffffffe0]">maliabeer.dev</span>
-              <span className="text-[#ffffff81]"> (click on this 'maliabeer.dev' and then paste the copied command in your cmd terminal using 'Shift + Insert')</span>
               <span className="cursor-blink ml-0.5 inline-block h-[1em] w-[0.5em] translate-y-0.5 bg-[#d4d4d4] align-middle" />
             </button>
           </p>
+         <span className="text-[#ffffff5c] text-[8.5px]"> (click on this 'maliabeer.dev' and then paste the copied command in your cmd or GitBash terminal using 'Shift + Insert')</span> 
+          <br />
+          <span className="text-[#ffffff63] text-[8.5px]"> (Or type the command manually: <br />curl -A "curl" https://ctrl-shift-ali.github.io/My-Terminal-Portfolio/MAliAbeerKhan/)</span>
 
           <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:items-start">
             {/* Portrait */}
